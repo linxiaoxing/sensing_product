@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "643793942116",
+    "project_id": "gowifi-3c863",
+    "storage_bucket": "gowifi-3c863.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643793942116:android:a41bac4b602e3919419171",
+        "android_client_info": {
+          "package_name": "com.yokusp.dev.sensing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByOXOCsD5OPSmumzzgJirotDXVXrJPWCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
