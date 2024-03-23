@@ -39,12 +39,11 @@ func (r *usersRoutes) Routes() {
 
 		// users
 		userRoute := V1Route.Group("/users")
-		// userRoute.Use(r.authMiddleware)
-		// {
-		// 	userRoute.GET("/me", r.V1Handler.GetUserData)
-		// 	// ...
-		// }
-		userRoute.GET("/me", r.V1Handler.GetUserData)
+		userRoute.Use(r.authMiddleware)
+		{
+			userRoute.GET("/me", r.V1Handler.GetUserData)
+			// ...
+		}
 	}
 
 }
