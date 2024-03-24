@@ -1,26 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ConfigProvider :locale="getAntdLocale">
+    <AppProvider>
+      <RouterView />
+    </AppProvider>
+  </ConfigProvider>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts" setup>
+  import { ConfigProvider } from 'ant-design-vue'
+  import { AppProvider } from '@/components/Application'
+  // import { useTitle } from '@/hooks/web/useTitle'
+  import { useLocale } from '@/locales/useLocale'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  import 'dayjs/locale/zh-cn'
+  // // support Multi-language
+   const { getAntdLocale } = useLocale()
+
+  // // Listening to page changes and dynamically changing site titles
+  // useTitle()
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
