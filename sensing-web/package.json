@@ -1,43 +1,61 @@
 {
-  "name": "sensing-web",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ark-admin-vuenext",
+  "version": "1.0.1",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "bootstrap": "pnpm install",
+    "serve": "npm run dev",
+    "dev": "vite",
+    "build": "vite build",
+    "preview:dist": "vite preview",
+    "lint": "eslint --cache --max-warnings 0  \"src/**/*.{vue,ts,tsx}\" --fix",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:lib": "rimraf node_modules",
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
+    "reinstall": "rimraf yarn.lock && rimraf package-lock.json && rimraf node_modules && npm run bootstrap"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "@unocss/reset": "^0.48.2",
+    "@vueuse/core": "^9.5.0",
+    "axios": "^0.24.0",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.6",
+    "echarts": "^5.4.0",
+    "element-plus": "^2.2.27",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.23",
+    "qs": "^6.11.0",
+    "vue": "^3.2.45",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "@iconify/json": "^2.1.136",
+    "@types/crypto-js": "^4.1.1",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^17.0.45",
+    "@types/nprogress": "^0.2.0",
+    "@types/qs": "^6.9.7",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "@unocss/preset-icons": "^0.48.2",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue-jsx": "^2.1.1",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.12.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "postcss": "^8.4.19",
+    "rimraf": "^3.0.2",
+    "sass": "^1.56.1",
+    "terser": "^5.15.1",
+    "typescript": "^4.8.4",
+    "unocss": "^0.48.2",
+    "vite": "^3.2.3",
+    "vite-plugin-compression": "^0.5.1",
+    "vue-eslint-parser": "^8.3.0",
+    "vue-tsc": "^1.0.9"
+  }
 }
