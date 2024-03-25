@@ -1,5 +1,5 @@
-import type { AppRouteRecordRaw, AppRouteModule } from '@/router/types';
-import { PageEnum } from '@/enums/pageEnum';
+import type { AppRouteRecordRaw, AppRouteModule } from '/@/router/types';
+import { PageEnum } from '/@/enums/pageEnum';
 // import { t } from '@/hooks/web/useI18n';
 
 // 根路由
@@ -15,7 +15,7 @@ export const RootRoute: AppRouteRecordRaw = {
 export const LoginRoute: AppRouteRecordRaw = {
     path: '/login',
     name: 'Login',
-    component: () => import('@/views/sys/login/Login.vue'),
+    component: () => import('/@/views/sys/login/Login.vue'),
     meta: {
       //title: t('routes.basic.login'),
       title: 'routes.basic.login',
