@@ -9,12 +9,12 @@
 
 <script lang="ts" setup>
 import { computed, unref } from 'vue';
-import { useGlobSetting } from '@/hooks/setting';
-import { useGo } from '@/hooks/web/usePage';
-import { useMenuSetting } from '@/hooks/setting/useMenuSetting';
-import { useDesign } from '@/hooks/web/useDesign';
-import { PageEnum } from '@/enums/pageEnum';
-//import { useUserStore } from '@/store/modules/user';
+import { useGlobSetting } from '/@/hooks/setting';
+import { useGo } from '/@/hooks/web/usePage';
+import { useMenuSetting } from '/@/hooks/setting/useMenuSetting';
+import { useDesign } from '/@/hooks/web/useDesign';
+import { PageEnum } from '/@/enums/pageEnum';
+import { useUserStore } from '/@/store/modules/user';
 
 const props = defineProps({
     /**
@@ -51,12 +51,12 @@ const getTitleClass = computed(() => [
 ]);
 
 function goHome() {
-    //go(userStore.getUserInfo.homePath || PageEnum.BASE_HOME);
+    go(userStore.getUserInfo.homePath || PageEnum.BASE_HOME);
 }
 </script>
 
 <style lang="less" scoped>
-  @prefix-cls: ~'@{namespace}-app-logo';
+  @prefix-cls: ~'vben-app-logo';
 
   .@{prefix-cls} {
     display: flex;
@@ -66,7 +66,7 @@ function goHome() {
     cursor: pointer;
 
     &.light {
-      border-bottom: 1px solid @border-color-base;
+      border-bottom: 1px solid #303030;
     }
 
     &.collapsed-show-title {
@@ -78,7 +78,7 @@ function goHome() {
     }
 
     &.dark &__title {
-      color: @white;
+      color: #fff;
     }
 
     &__title {

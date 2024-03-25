@@ -1,4 +1,5 @@
 import type { App, Component } from 'vue';
+import { isObject } from '/@/utils/is';
 
 type EventShim = {
     new (...args: any[]): {
@@ -24,4 +25,13 @@ export const withInstall = <T extends CustomComponent>(component: T, alias?: str
       }
     };
     return component as WithInstall<T>;
-  };
+};
+
+export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
+  let key: string;
+  for (key in target) {
+    src[key] = isObject(src[key]) ? deepMerge(src[key], target[key]) : (src[key] = target[key]);
+  }
+  return src;
+
+}
