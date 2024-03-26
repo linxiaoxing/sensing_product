@@ -1,15 +1,29 @@
 import { createApp } from 'vue'
+// import App from './App.vue'
 import App from './App.vue'
 import 'uno.css'
+import '/@/styles/index.scss'
 
 import { router, setupRouter } from '/@/router'
 import { setupRouterGuard } from '/@/router/guard'
+import { setupStore } from '/@/stores'
 import { setupI18n } from '/@/locales/setupI18n'
+import { initAppConfig } from '/@/logics/initAppConfig'
+import { registerGlobalComp } from '/@/components/registerGlobalComp'
 
 async function bootstrap() {
   const app = createApp(App)
 
-  // setup i18n
+  // store
+  setupStore(app)
+
+  // init appconfig
+  initAppConfig()
+
+  // register global component and lib
+  registerGlobalComp(app)
+
+  // // setup i18n
   await setupI18n(app)
 
   // setup router
