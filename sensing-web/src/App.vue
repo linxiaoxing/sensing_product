@@ -1,10 +1,11 @@
 <template>
- <ElConfigProvider v-bind="getElConfig">
+  <ElConfigProvider v-bind="getElConfig">
     <AppProvider>
       <RouterView />
     </AppProvider>
   </ElConfigProvider>
 </template>
+
 <script setup lang="ts">
 import { AppProvider } from '/@/components/Application'
 import { useTitle } from './composables/web/useTitle'
