@@ -4,27 +4,27 @@ import { t } from '/@/composables/core/useTransl'
 import { NotFoundRouteName, PageEnum, RedirectRouteName } from '/@/enums/pageEnum'
 import { toHump } from '/@/utils'
 
-// /**
-//  * @description notfound route
-//  */
-// export const NotFoundRoute: RouteRecordRaw = {
-//   path: '/:path(.*)*',
-//   name: NotFoundRouteName,
-//   component: ParentLayout,
-//   meta: {
-//     hidden: true,
-//   },
-//   children: [
-//     {
-//       path: '/:path(.*)*',
-//       name: NotFoundRouteName,
-//       component: ExceptionComponent,
-//       meta: {
-//         title: '404',
-//       },
-//     },
-//   ],
-// }
+/**
+ * @description notfound route
+ */
+export const NotFoundRoute: RouteRecordRaw = {
+  path: '/:path(.*)*',
+  name: NotFoundRouteName,
+  component: ParentLayout,
+  meta: {
+    hidden: true,
+  },
+  children: [
+    {
+      path: '/:path(.*)*',
+      name: NotFoundRouteName,
+      component: ExceptionComponent,
+      meta: {
+        title: '404',
+      },
+    },
+  ],
+}
 
 
 /**
