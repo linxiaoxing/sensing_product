@@ -6,7 +6,7 @@ import '/@/styles/index.scss'
 
 import { createApp } from 'vue'
 import { registerGlobalComp } from '/@/components/registerGlobalComp'
-import { setupGlobalDirectives } from '/@/directives/setupGlobalDirectives'
+// import { setupGlobalDirectives } from '/@/directives/setupGlobalDirectives'
 import { initAppConfig } from '/@/logics/initAppConfig'
 import { router, setupRouter } from '/@/router'
 import { setupRouterGuard } from '/@/router/guard'
@@ -36,7 +36,7 @@ async function bootstrap() {
   setupRouterGuard(router)
 
   // global directive
-  setupGlobalDirectives(app)
+  //setupGlobalDirectives(app)
 
   // mount
   app.mount('#app')
