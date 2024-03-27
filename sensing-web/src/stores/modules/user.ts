@@ -1,6 +1,7 @@
 import { merge } from 'lodash-es'
 import { defineStore } from 'pinia'
-// import { getUserInfo, userLogout as logoutRequest } from '/@/api/basic'
+import { usePermissionStore } from './permission'
+import { getUserInfo, userLogout as logoutRequest } from '/@/api/basic'
 import { RoleEnum } from '/@/enums/roleEnum'
 import { resetRouter } from '/@/router'
 import { setToken as setLocalToken, removeToken } from '/@/utils/auth'
@@ -47,21 +48,21 @@ export const useUserStore = defineStore({
       this.roleList = roleList
     },
     async getUserInfoAction(): Promise<void> {
-      // const data = await getUserInfo()
-      // this.userInfo = {
-      //   username: data!.username,
-      //   avatar: data!.avatar,
-      // }
-      // // 角色列表（远程获取，这里Mock了假数据）
-      // this.setRoleList([RoleEnum.ROOT])
+      const data = await getUserInfo()
+      this.userInfo = {
+        username: data!.username,
+        avatar: data!.avatar,
+      }
+      // 角色列表（远程获取，这里Mock了假数据）
+      this.setRoleList([RoleEnum.ROOT])
     },
     async logout(): Promise<void> {
       // can fail
-      // await logoutRequest()
+      await logoutRequest()
 
-    //   const permissionStore = usePermissionStore()
-    //   this.resetState()
-    //   permissionStore.resetState()
+      const permissionStore = usePermissionStore()
+      this.resetState()
+      permissionStore.resetState()
 
       resetRouter()
     },
