@@ -37,20 +37,20 @@ const transform: AxiosTransform = {
       throw new Error('response data empty')
     }
 
-    const { data: result, msg: message, code } = data
+    const { data: result, msg: message} = data
 
     // 接口数据code判断是否成功
-    const isSuccess = code === ResultEnum.SUCCESS
+    const isSuccess = res.status === ResultEnum.SUCCESS
     if (isSuccess) {
       return result
     }
 
     // 错误描述信息
-    const errMessage = `[${code}] ${message || t('common.http.requestFailed')}`
+    const errMessage = `[${res.status}] ${message || t('common.http.requestFailed')}`
 
     // 在此处根据自己项目的实际情况对不同的code执行不同的操作
     // 如果不希望中断当前请求，请return数据，否则直接抛出异常即可
-    switch (code) {
+    switch (res.status) {
       case ResultEnum.TOKEN_INVALID:
         // Token过期或Token无效则清除
         const userStore = useUserStore()

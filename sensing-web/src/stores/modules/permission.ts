@@ -79,17 +79,17 @@ export const usePermissionStore = defineStore({
       const roleList = toRaw(userStore.getRoleList) || []
       const { permissionMode = projectSetting.permissionMode } = appStore.getProjectConfig
 
-      // 角色路由过滤
-      const routeRoleFilter = (route: RouteRecordRaw): boolean => {
-        const { meta } = route
-        const { roles } = meta || ({} as RouteMeta)
+      // // 角色路由过滤
+      // const routeRoleFilter = (route: RouteRecordRaw): boolean => {
+      //   const { meta } = route
+      //   const { roles } = meta || ({} as RouteMeta)
 
-        if (!roles) {
-          return true
-        }
+      //   if (!roles) {
+      //     return true
+      //   }
 
-        return roleList.some((role) => roles.includes(role))
-      }
+      //   return roleList.some((role) => roles.includes(role))
+      // }
 
       const routeRemoveIllegalFilter = (menu: Menu): boolean => {
         if (menu.type === MenuTypeEnum.Permission) {
@@ -135,12 +135,12 @@ export const usePermissionStore = defineStore({
           break
 
         // 角色路由模式
-        case PermissionModeEnum.ROLE:
-          routes = filter(roleRoutes, routeRoleFilter)
+        // case PermissionModeEnum.ROLE:
+        //   routes = filter(roleRoutes, routeRoleFilter)
 
-          // 增加 404 Not found 路由
-          routes = [NotFoundRoute, ...routes]
-          break
+        //   // 增加 404 Not found 路由
+        //   routes = [NotFoundRoute, ...routes]
+        //   break
       }
 
       // store

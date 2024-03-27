@@ -2,7 +2,7 @@ import { defHttp } from '/@/utils/http/axios'
 import type { Menu } from '/@/router/typing'
 
 const Api = {
-  login: '/user/login',
+  login: '/auth/login',
   captcha: '/user/login/captcha',
   info: '/user/info',
   permmenu: '/user/permmenu',
@@ -26,13 +26,18 @@ export function getImageCaptcha(params?: CaptchaImgParams) {
 }
 
 interface UserLoginParams {
-  account: string
+  email: string
   password: string
   captchaId: string
   verifyCode: string
 }
 interface UserLoginResult {
   token: string
+  id: string 
+	username: string 
+	email: string 
+	password: string 
+	role_id: number    
 }
 export function userLogin(data: UserLoginParams): Promise<Nullable<UserLoginResult>> {
   return defHttp.post<Nullable<UserLoginResult>>(

@@ -85,6 +85,29 @@ export const LoginRoute: RouteRecordRaw = {
 //     ],
 //   }
   
+/**
+ * @description dashboard route
+ */
+export const DashboardRoute: RouteRecordRaw = {
+  path: PageEnum.Root,
+  name: toHump(PageEnum.Dashboard),
+  component: ParentLayout,
+  redirect: PageEnum.Dashboard,
+  meta: {
+    single: true,
+  },
+  children: [
+    {
+      path: PageEnum.Dashboard,
+      component: () => import('/@/views/basic/dashboard/Dashboard.vue'),
+      meta: {
+        title: t('routes.dashboard'),
+        icon: 'carbon:dashboard',
+      },
+    },
+  ],
+}
+
   /**
    * @description basic routing without permission
    */

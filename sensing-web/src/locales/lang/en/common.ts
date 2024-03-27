@@ -33,7 +33,7 @@ export default {
   login: {
     oslink: 'Github Link',
     signin: 'Sign in',
-    account: 'Username',
+    account: 'Email',
     passwd: 'Password',
     captcha: 'Captcha',
   },
