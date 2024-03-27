@@ -12,13 +12,13 @@ export const localeSetting: LocaleSetting = {
     availableLocales: [LOCALE.EN, LOCALE.ZH_CN],
 }
   
-// export const localeList: LabelValueOptions = [
-//     {
-//       label: '简体中文',
-//       value: LOCALE.ZH_CN,
-//     },
-//     {
-//       label: 'English',
-//       value: LOCALE.EN,
-//     },
-// ]
+export const localeList: LabelValueOptions = [
+    {
+      label: '简体中文',
+      value: LOCALE.ZH_CN,
+    },
+    {
+      label: 'English',
+      value: LOCALE.EN,
+    },
+]

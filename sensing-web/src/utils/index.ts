@@ -21,3 +21,25 @@ export const withInstall = <T>(component: T, alias?: string) => {
   }
   return component as T & Plugin
 }
+
+/**
+ * 1px -> 1
+ * @param unit px rem
+ * @returns
+ */
+export function numberUnit(unit: string) {
+  return Number(unit.replace(/[^\d]/g, ''))
+}
+
+export function openWindow(
+  url: string,
+  opt?: { target?: WindowTargetContext | string; noopener?: boolean; noreferrer?: boolean }
+) {
+  const { target = '__blank', noopener = true, noreferrer = true } = opt || {}
+  const feature: string[] = []
+
+  noopener && feature.push('noopener=yes')
+  noreferrer && feature.push('noreferrer=yes')
+
+  window.open(url, target, feature.join(','))
+}

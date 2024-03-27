@@ -113,5 +113,5 @@ export const DashboardRoute: RouteRecordRaw = {
    */
   export const basicRoutes: RouteRecordRaw[] = [
     LoginRoute,
-    // ExceptionRoute,
+    DashboardRoute
   ]
