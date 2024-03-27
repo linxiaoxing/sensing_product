@@ -8,7 +8,7 @@ import (
 
 type BaseResponse struct {
 	Status  bool        `json:"status"`
-	Message string      `json:"message,omitempty"`
+	Message string      `json:"msg,omitempty"`
 	Data    interface{} `json:"data,omitempty"`
 }
 

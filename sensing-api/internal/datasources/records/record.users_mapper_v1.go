@@ -6,14 +6,11 @@ import (
 
 func (u *Users) ToV1Domain() V1Domains.UserDomain {
 	return V1Domains.UserDomain{
-		ID:        u.Id,
-		Username:  u.Username,
-		Email:     u.Email,
-		Password:  u.Password,
-		Active:    u.Active,
-		RoleID:    u.RoleId,
-		CreatedAt: u.CreatedAt,
-		UpdatedAt: u.UpdatedAt,
+		ID:       u.Id,
+		Username: u.Username,
+		Email:    u.Email,
+		Password: u.Password,
+		Active:   u.Active,
 	}
 }
 
