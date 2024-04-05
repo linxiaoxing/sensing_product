@@ -1,29 +1,22 @@
-name: CI on dev branch
-
-on:
-  push:
-    branches:
-      - dev02
+name: Continuous Integration
+on: pull_request
 
 jobs:
-  build:
+  CI:
+    name: CI
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      # Add steps to setup Flutter and run your Flutter build and test commands
-      # For example:
-      - name: Set up Flutter
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create flutter environment
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '2.8.1' # Set the Flutter version you want to use
-
-      - name: Get dependencies
+          flutter-version: '3.13.9'
+      - name: Install packages
         run: flutter pub get
-
-      - name: Build app
-        run: flutter build apk
-
-      # Add more steps for testing, analysis, etc. as needed
+      - name: Check format
+        run: dart format lib --set-exit-if-changed -o none
+      - name: Analyze
+        run: flutter analyze
+      - name: Test
+        run: flutter test --update-goldens
