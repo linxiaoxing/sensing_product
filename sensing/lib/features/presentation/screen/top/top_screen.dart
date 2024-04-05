@@ -15,7 +15,9 @@ class TopScreen extends HookConsumerWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: GradientAppBar(
-          title: Constants.widgetOptions.elementAt(selectedIndex),
+          title: Center(
+              child: Constants.widgetOptions.elementAt(selectedIndex)
+          ),
           gradient: const LinearGradient(
             colors: [Colors.black38, Colors.white24],
           ),
