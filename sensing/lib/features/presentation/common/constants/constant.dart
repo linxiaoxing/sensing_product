@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sensing/features/presentation/screen/history/history_screen.dart';
 
 const kTextcolor = Color(0xFF241424);
 
@@ -27,10 +28,17 @@ class Constants {
     ),
   ];
 
-  static List<Widget> widgetOptions = <Widget>[
+  static List<Widget> widgetTitle = <Widget>[
     const Text('Top Page'),
     const Text('Detection Page'),
     const Text('History Page'),
+    const Text('Profile Page'),
+  ];
+
+  static List<Widget> widgetBody = <Widget>[
+    const Text('Top Page'),
+    const Text('Detection Page'),
+    const HistoryScreen(),
     const Text('Profile Page'),
   ];
 }
