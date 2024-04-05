@@ -7,7 +7,7 @@ class Constants {
   static const navBarItems = [
     NavigationDestination(
       icon: Icon(Icons.home_outlined),
-      selectedIcon: Icon(Icons.home_rounded),
+      selectedIcon: Icon(Icons.home_outlined),
       label: 'Home',
     ),
     NavigationDestination(
@@ -22,7 +22,7 @@ class Constants {
     ),
     NavigationDestination(
       icon: Icon(Icons.person_outline_rounded),
-      selectedIcon: Icon(Icons.person_rounded),
+      selectedIcon: Icon(Icons.person_outline_rounded),
       label: 'Profile',
     ),
   ];
