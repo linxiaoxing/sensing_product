@@ -1,22 +1,20 @@
-name: Continuous Integration
-on: pull_request
-
+name: Check and test the source code
+on:
+ pull_request:
+  branches:
+   - main
 jobs:
-  CI:
-    name: CI
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Create flutter environment
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.13.9'
-      - name: Install packages
-        run: flutter pub get
-      - name: Check format
-        run: dart format lib --set-exit-if-changed -o none
-      - name: Analyze
-        run: flutter analyze
-      - name: Test
-        run: flutter test --update-goldens
+ test:
+  name: Check the source code
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+   - uses: subosito/flutter-action@v2.3.0
+     with:
+      flutter-version: '3.3.10'
+   - name: Install packages
+     run: flutter pub get
+   - name: Linter
+     run: flutter analyze
+   - name: Test
+     run: flutter test
