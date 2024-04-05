@@ -1,0 +1,7 @@
+{
+  "flavor": "stage",
+  "appId": "xx",
+  "appIdSuffix": ".stage",
+  "appName": "Wifi Sensing",
+  "SENSING_HOST": "localhost:8080"
+}

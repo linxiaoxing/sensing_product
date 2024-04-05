@@ -1,0 +1,7 @@
+{
+  "flavor": "prod",
+  "appId": "xx",
+  "appIdSuffix": "",
+  "appName": "Wifi Sensing",
+  "SENSING_HOST": "xx"
+}

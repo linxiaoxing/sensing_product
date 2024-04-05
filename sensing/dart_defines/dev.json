@@ -1,0 +1,7 @@
+{
+  "flavor": "dev",
+  "appId": "xx",
+  "appIdSuffix": ".debug",
+  "appName": "Wifi Sensing",
+  "SENSING_HOST": "192.168.1.51:8080"
+}
