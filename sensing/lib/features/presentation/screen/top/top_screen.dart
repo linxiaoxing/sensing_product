@@ -15,14 +15,16 @@ class TopScreen extends HookConsumerWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: GradientAppBar(
-          title: const Text('Bottom Navigation Bar Example'),
+          title: Center(
+              child: Constants.widgetTitle.elementAt(selectedIndex)
+          ),
           gradient: const LinearGradient(
             colors: [Colors.black38, Colors.white24],
           ),
         ),
         body: Stack(children: [
           Center(
-            child: Constants.widgetOptions.elementAt(selectedIndex),
+            child: Constants.widgetBody.elementAt(selectedIndex),
           ),
         ]),
         bottomNavigationBar: NavigationBar(
