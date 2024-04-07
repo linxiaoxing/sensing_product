@@ -18,10 +18,10 @@ func NewDetectionUsecase(repo V1Domains.DetectionRepository) V1Domains.Detection
 	}
 }
 
-func (uc *detectionUsecase) GetDetectionHistory(ctx context.Context, inDom *V1Domains.DetectionHistoryReqDomain) (outDom V1Domains.DetectionHistoryRepDomain, statusCode int, err error) {
-	detection, err := uc.repo.GetDetectionHistory(ctx, &V1Domains.DetectionHistoryReqDomain{ServiceId: inDom.ServiceId})
+func (uc *detectionUsecase) GetDetectionHistory(ctx context.Context, inDom *V1Domains.DetectionHistoryReqDomain) (outDom []V1Domains.DetectionHistoryRepDomain, statusCode int, err error) {
+	detection, err := uc.repo.GetDetectionHistory(ctx, inDom.ServiceId)
 	if err != nil {
-		return V1Domains.DetectionHistoryRepDomain{}, http.StatusNotFound, errors.New("serviceId not found")
+		return []V1Domains.DetectionHistoryRepDomain{}, http.StatusNotFound, errors.New("serviceId not found")
 	}
 
 	return detection, http.StatusOK, nil

@@ -27,18 +27,18 @@ type DetectionHistoryRepDomain struct {
 }
 
 type DetectionHistoryItem struct {
-	Categories          string
+	Category            string
 	DetectionID         string
 	DetectedLocation    string
 	RecordingDate       int64
-	FsModeSetTrackingID *string
+	FSModeSetTrackingID *string
 	DetectionTrackingID *string
 }
 
 type DetectionUsecase interface {
-	GetDetectionHistory(ctx context.Context, inDom *DetectionHistoryReqDomain) (outDom DetectionHistoryRepDomain, statusCode int, err error)
+	GetDetectionHistory(ctx context.Context, inDom *DetectionHistoryReqDomain) (outDom []DetectionHistoryRepDomain, statusCode int, err error)
 }
 
 type DetectionRepository interface {
-	GetDetectionHistory(ctx context.Context, inDom *DetectionHistoryReqDomain) (outDom DetectionHistoryRepDomain, err error)
+	GetDetectionHistory(ctx context.Context, serviceId string) (outDom []DetectionHistoryRepDomain, err error)
 }
