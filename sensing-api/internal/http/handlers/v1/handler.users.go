@@ -71,7 +71,6 @@ func (userH UserHandler) Login(ctx *gin.Context) {
 		return
 	}
 
-	fmt.Print("domain:%", responses.FromV1Domain(userDomain))
 	NewSuccessResponse(ctx, statusCode, "login success", responses.FromV1Domain(userDomain))
 }
 

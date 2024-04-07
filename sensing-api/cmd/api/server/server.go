@@ -62,6 +62,7 @@ func NewApp() (*App, error) {
 	api := router.Group("api")
 	api.GET("/", routes.RootHandler)
 	routes.NewUsersRoute(api, conn, jwtService, redisCache, ristrettoCache, authMiddleware, mailerService).Routes()
+	routes.NewDetectionRoute(api, conn, jwtService, redisCache, ristrettoCache, authMiddleware, mailerService).Routes()
 
 	// we can add web pages if needed
 	// web := router.Group("web")
