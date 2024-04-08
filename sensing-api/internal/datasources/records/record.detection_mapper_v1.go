@@ -8,7 +8,7 @@ import (
 func (u *DetectionRecord) ToV1ItemDomain() V1Domains.DetectionHistoryItem {
 	return V1Domains.DetectionHistoryItem{
 		Category:            u.Category,
-		DetectionID:         u.DetectionID,
+		DetectionId:         u.DetectionId,
 		DetectedLocation:    u.DetectedLocation,
 		RecordingDate:       u.RecordingDate,
 		FSModeSetTrackingID: u.FSModeSetTrackingID,
@@ -34,13 +34,14 @@ func ToArrayOfDetectionHistoryV1Domain(u *[]DetectionRecord) []V1Domains.Detecti
 				data = append(data, val.ToV1ItemDomain())
 				begin = val.Begin
 				end = val.End
-				lastDocID = &val.LastDocID
+				lastDocID = &val.LastDocId
 			}
 		}
 		history := V1Domains.DetectionHistoryRepDomain{
 			Begin:     begin,
 			End:       end,
 			LastDocID: lastDocID,
+			Data:      data,
 		}
 		result = append(result, history)
 	}

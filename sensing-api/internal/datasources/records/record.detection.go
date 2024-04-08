@@ -20,9 +20,9 @@ type DetectionHistoryItem struct {
 type DetectionRecord struct {
 	Begin               *int64  `db:"begin_time"`
 	End                 *int64  `db:"end_time"`
-	LastDocID           string  `db:"last_doc_id"`
+	LastDocId           string  `db:"last_doc_id"`
 	Category            string  `db:"category"`
-	DetectionID         string  `db:"detection_id"`
+	DetectionId         string  `db:"detection_id"`
 	DetectedLocation    string  `db:"detected_location"`
 	RecordingDate       int64   `db:"recording_date"`
 	FSModeSetTrackingID *string `db:"fs_mode_set_tracking_id"`
